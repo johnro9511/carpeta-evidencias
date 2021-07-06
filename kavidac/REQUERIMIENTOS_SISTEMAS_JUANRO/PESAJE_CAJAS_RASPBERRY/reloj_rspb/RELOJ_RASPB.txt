@@ -1,0 +1,33 @@
+1.- DESACTIVAR LA HORA DEL SERVIDOR NTP
+  sudo timedatectl set-ntp false
+VALIDAR: timedatectl status
+---------------------------------------------------------------------
+2.- CAMBIO EN EL CODIGO (COMPILAR):
+* chmod +x rtc-pi
+* sudo ./rtc-pi 20210428132010
+* sudo ./rtc-pi
+
+** En la versión 2, Pi GPIO27 está en lugar de GPIO21 (mismo pin). 
+---------------------------------------------------------------------
+3.- ENTRAR A CRONTAB Y AGREGAR P/INICIALIZAR RELOJ (NO HACERLO)
+* * * * * /home/pi/Replicacion/reloj_rspb/rtc-pi
+---------------------------------------------------------------------
+4.- QUITAR LA EJECUCION DE REPLICACION DEL CRONTAB (NO HACERLO)
+* * * * * sh /home/pi/replicacion.sh
+---------------------------------------------------------------------
+5.- ANY-DESK OFICINA JUAN
+  ID: 751 560 516
+  PSS: kavidac2021
+---------------------------------------------------------------------
+6.- ANY-DESK RASPBERRY REPESAJE
+  ID: 711 323 096 || 245 875 001
+  PSS: kavidac2021
+---------------------------------------------------------------------
+7.- CONSULTAR ULTIMO REGISTRO PARA CONTINUAR SECUENCIA
+  select *from cajas.peso_x_caja order by id_caja desc limit 1;
+---------------------------------------------------------------------
+8.- CAMBIAR SECUENCIA DE CONTEO DE CAJAS EN RASPBERRY 
+  A) SELECCIONAR EN SECUENCIAS
+  B) ELEGIR: peso_x_caja_id_caja_seq
+  C) EN PROPIEDADES + DEFINICION + CAMBIAR CURRENT_VALUE
+---------------------------------------------------------------------
